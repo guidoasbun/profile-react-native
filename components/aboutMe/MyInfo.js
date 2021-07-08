@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Text, StyleSheet, View } from "react-native";
-import About from "./About";
+import { About } from "./About";
 
-const MyInfo = () => {
+export const MyInfo = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.nameText}>Hello, My name is Guido!!!</Text>
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: "center",
     alignItems: "center",
-    paddingTop: 5
+    paddingTop: 12
   },
   nameText: {
     fontSize: 30,
@@ -28,4 +28,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default MyInfo;
+

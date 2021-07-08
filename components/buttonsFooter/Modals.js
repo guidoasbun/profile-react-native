@@ -9,12 +9,18 @@ import {
   Alert,
   Modal,
   Pressable,
+  SectionList,
 } from "react-native";
 
-const Buttons = () => {
+export const Modals = ({ modalName, obj }) => {
   const [modalVisible, setModalVisible] = useState(false);
+  const Item = ({ name }) => (
+    <View>
+      <Text>{name}</Text>
+    </View>
+  );
   return (
-    <View style={styles.container}>
+    <View>
       <Modal
         animationType="slide"
         transparent={true}
@@ -26,7 +32,14 @@ const Buttons = () => {
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Contact Me</Text>
+
+            {obj.map((hotDog, i) => (
+              <View key={obj[i].id}>
+                <Text style={styles.nameMap}>{obj[i].name}</Text>
+                <Text style={styles.valueMap}>{obj[i].value}</Text>
+              </View>
+            ))}
+
             <Pressable
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible(!modalVisible)}
@@ -40,55 +53,29 @@ const Buttons = () => {
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible(true)}
       >
-          <View>
-              <Text style={styles.textStyle}>Contact Me</Text>
-          </View>
-      </Pressable>
-       
-
-
-
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => {
-          Alert.alert("Modal has been closed.");
-          setModalVisible(!modalVisible);
-        }}
-      >
-        <View style={styles.centeredView}>
-          <View style={styles.modalView}>
-            <Text style={styles.modalText}>Projects</Text>
-            <Pressable
-              style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
-            >
-              <Text style={styles.textStyle}>Hide</Text>
-            </Pressable>
-          </View>
+        <View>
+          <Text style={styles.textStyle}>{modalName}</Text>
         </View>
-      </Modal>
-      <Pressable
-        style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}
-      >
-        <Text style={styles.textStyle}>Projects</Text>
       </Pressable>
     </View>
   );
 };
 
-export default Buttons;
-
 const styles = StyleSheet.create({
-  container: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    backgroundColor: "#8D8DF0",
-    padding: 15,
-  },
+    nameMap: {
+        backgroundColor: '#6F78F5',
+        color: 'white',
+        textAlign: 'center',
+        padding: 10,
+        fontSize: 18,
+        fontWeight: 'bold'
+    },
+    valueMap: {
+        backgroundColor: 'white',
+        padding: 10,
+        fontWeight: 'bold'
+
+    },
   centeredView: {
     flex: 1,
     justifyContent: "center",
@@ -114,13 +101,13 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     padding: 10,
     elevation: 2,
-    margin: 10
+    margin: 10,
   },
   buttonOpen: {
-    backgroundColor: "#2196F3",
+    backgroundColor: "#0615EE",
   },
   buttonClose: {
-    backgroundColor: "#2196F3",
+    backgroundColor: "#0615EE",
   },
   textStyle: {
     color: "white",

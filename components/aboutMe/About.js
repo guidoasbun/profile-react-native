@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Text, StyleSheet, View } from "react-native";
 
-const About = () => {
+export const About = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.aboutText}>
@@ -28,4 +28,3 @@ const styles = StyleSheet.create({
   },
 });
 
-export default About;

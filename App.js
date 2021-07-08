@@ -1,9 +1,9 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, ScrollView, View } from "react-native";
-import ProfileImage from "./ProfileImage";
-import MyInfo from "./MyInfo";
-import Buttons from "./Buttons";
+import { ProfileImage } from "./components/imageHeader/ProfileImage";
+import { MyInfo } from "./components/aboutMe/MyInfo";
+import { Footer } from './components/buttonsFooter/Footer' 
 
 export default function App() {
   return (
@@ -11,7 +11,7 @@ export default function App() {
       <ScrollView>
         <ProfileImage />
         <MyInfo />
-        <Buttons />
+        <Footer />
       </ScrollView>
     </View>
   );
