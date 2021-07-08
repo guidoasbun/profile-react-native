@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   image: {
     width: 300,
     height: 300,
-    borderRadius: 50,
+    borderRadius: 150,
   },
 });
 export default ProfileImage;
