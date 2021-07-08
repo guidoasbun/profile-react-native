@@ -2,14 +2,11 @@ import React, { useState } from "react";
 
 import {
   StyleSheet,
-  Button,
   View,
-  SafeAreaView,
   Text,
   Alert,
   Modal,
   Pressable,
-  SectionList,
 } from "react-native";
 
 export const Modals = ({ modalName, obj }) => {

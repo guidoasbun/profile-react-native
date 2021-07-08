@@ -1,4 +1,3 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, ScrollView, View } from "react-native";
 import { ProfileImage } from "./components/imageHeader/ProfileImage";
